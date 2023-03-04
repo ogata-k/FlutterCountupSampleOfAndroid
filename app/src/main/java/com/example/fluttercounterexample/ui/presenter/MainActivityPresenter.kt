@@ -1,13 +1,13 @@
 package com.example.fluttercounterexample.ui.presenter
 
-import com.example.fluttercounterexample.ui.contract.MainActivityContract
+import com.example.fluttercounterexample.ui.contract.CounterViewContract
 
-class MainActivityPresenter : MainActivityContract.Presenter {
-    private var view: MainActivityContract.View? = null
+class MainActivityPresenter : CounterViewContract.Presenter {
+    private var view: CounterViewContract.View? = null
 
     private var count: Int = 0
 
-    override fun attachView(view: MainActivityContract.View) {
+    override fun attachView(view: CounterViewContract.View) {
         this.view = view
     }
 
@@ -19,7 +19,7 @@ class MainActivityPresenter : MainActivityContract.Presenter {
         this.count = count
     }
 
-    override fun onResume(view: MainActivityContract.View) {
+    override fun onResume(view: CounterViewContract.View) {
         view.setCount(count)
     }
 

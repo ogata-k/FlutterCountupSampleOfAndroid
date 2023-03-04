@@ -6,17 +6,17 @@ import android.view.View
 import android.view.View.OnClickListener
 import androidx.appcompat.app.AppCompatActivity
 import com.example.fluttercounterexample.databinding.ActivityMainBinding
-import com.example.fluttercounterexample.ui.contract.MainActivityContract
+import com.example.fluttercounterexample.ui.contract.CounterViewContract
 import com.example.fluttercounterexample.ui.presenter.MainActivityPresenter
 
-class MainActivity : AppCompatActivity(), MainActivityContract.View {
+class MainActivity : AppCompatActivity(), CounterViewContract.View {
     companion object {
         const val VIEW_NAME = "MainActivity"
         const val COUNT_BUNDLE_KEY = "COUNT_TEXT_VALUE"
     }
 
     private lateinit var binding: ActivityMainBinding
-    private lateinit var presenter: MainActivityContract.Presenter
+    private lateinit var presenter: CounterViewContract.Presenter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         Log.d(VIEW_NAME, "onCreate")

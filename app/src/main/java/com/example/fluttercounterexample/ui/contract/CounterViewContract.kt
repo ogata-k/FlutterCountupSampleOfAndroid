@@ -3,7 +3,7 @@ package com.example.fluttercounterexample.ui.contract
 import com.example.fluttercounterexample.ui.presenter.BasePresenter
 import com.example.fluttercounterexample.ui.view.BaseView
 
-interface MainActivityContract {
+interface CounterViewContract {
     interface View : BaseView {
         fun setCount(count: Int)
     }
