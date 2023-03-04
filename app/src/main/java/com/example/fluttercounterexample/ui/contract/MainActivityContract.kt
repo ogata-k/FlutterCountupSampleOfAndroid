@@ -8,6 +8,9 @@ interface MainActivityContract {
         fun setCount(count: Int)
     }
     interface Presenter : BasePresenter<View> {
+        fun restoreState(count: Int)
+        // 保存するべき状態であることがわかりやすいようにStateをサフィックスとしてつける
+        fun getCountState(): Int
         fun incrementCount()
     }
 }
