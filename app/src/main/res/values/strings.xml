@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">FlutterCounterExample</string>
+    <string name="initial_count">0</string>
+    <string name="count_up">+1</string>
 </resources>
