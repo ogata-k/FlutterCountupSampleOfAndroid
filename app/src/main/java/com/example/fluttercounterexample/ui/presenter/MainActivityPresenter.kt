@@ -15,7 +15,7 @@ class MainActivityPresenter : MainActivityContract.Presenter {
         this.view = null
     }
 
-    override fun restoreState(count: Int) {
+    override fun restoreStateOnCreate(count: Int) {
         this.count = count
     }
 

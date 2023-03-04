@@ -9,7 +9,7 @@ interface MainActivityContract {
     }
 
     interface Presenter : BasePresenter<View> {
-        fun restoreState(count: Int)
+        fun restoreStateOnCreate(count: Int)
 
         // 保存するべき状態であることがわかりやすいようにStateをサフィックスとしてつける
         fun getCountState(): Int

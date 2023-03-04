@@ -26,20 +26,18 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
 
         presenter = MainActivityPresenter()
 
-        // Viewに関しては今回リストアする必要ないのでsavedInstanceStateの使用は必要ない
+        // Activityを破棄した時の状態を可能な限り復元する
+        if (savedInstanceState != null) {
+            Log.d(VIEW_NAME, "onRestoreInstanceStateOfOnCreate")
+            val countState: Int = savedInstanceState.getInt(COUNT_BUNDLE_KEY, 0)
+            presenter.restoreStateOnCreate(countState)
+        }
 
         binding.countUpButton.setOnClickListener(object : OnClickListener {
             override fun onClick(v: View?) {
                 presenter.incrementCount()
             }
         })
-    }
-
-    override fun onRestoreInstanceState(savedInstanceState: Bundle) {
-        Log.d(VIEW_NAME, "onRestoreInstanceState")
-        super.onRestoreInstanceState(savedInstanceState)
-        val countState: Int = savedInstanceState.getInt(COUNT_BUNDLE_KEY, 0)
-        presenter.restoreState(countState)
     }
 
     override fun onResume() {
