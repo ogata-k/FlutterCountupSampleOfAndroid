@@ -11,11 +11,27 @@ interface BasePresenter<View : BaseView> {
         onResume(view)
     }
 
+    /**
+     * call from [resume]
+     */
     fun onResume(view: View)
 
     fun pause() {
         detachView()
+        onPause()
     }
 
-    fun stop()
+    /**
+     * call from [pause]
+     */
+    fun onPause()
+
+    fun stop() {
+        onStop()
+    }
+
+    /**
+     * call from [stop]
+     */
+    fun onStop()
 }

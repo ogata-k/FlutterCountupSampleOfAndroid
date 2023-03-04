@@ -23,12 +23,16 @@ class MainActivityPresenter : MainActivityContract.Presenter {
         view.setCount(count)
     }
 
-    override fun getCountState(): Int {
-        return count
+    override fun onPause() {
+        // none
     }
 
-    override fun stop() {
+    override fun onStop() {
         // none
+    }
+
+    override fun getCountState(): Int {
+        return count
     }
 
     override fun incrementCount() {

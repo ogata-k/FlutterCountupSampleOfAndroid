@@ -52,16 +52,16 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
         super.onPause()
     }
 
-    override fun onSaveInstanceState(outState: Bundle) {
-        Log.d(VIEW_NAME, "onSaveInstanceState")
-        super.onSaveInstanceState(outState)
-        outState.putInt(COUNT_BUNDLE_KEY, presenter.getCountState())
-    }
-
     override fun onStop() {
         Log.d(VIEW_NAME, "onStop")
         presenter.stop()
         super.onStop()
+    }
+
+    override fun onSaveInstanceState(outState: Bundle) {
+        Log.d(VIEW_NAME, "onSaveInstanceState")
+        super.onSaveInstanceState(outState)
+        outState.putInt(COUNT_BUNDLE_KEY, presenter.getCountState())
     }
 
     override fun setCount(count: Int) {
