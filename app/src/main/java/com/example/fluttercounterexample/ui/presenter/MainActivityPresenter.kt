@@ -2,7 +2,7 @@ package com.example.fluttercounterexample.ui.presenter
 
 import com.example.fluttercounterexample.ui.contract.MainActivityContract
 
-class MainActivityPresenter : MainActivityContract.Presenter{
+class MainActivityPresenter : MainActivityContract.Presenter {
     private var view: MainActivityContract.View? = null
 
     private var count: Int = 0
@@ -27,7 +27,7 @@ class MainActivityPresenter : MainActivityContract.Presenter{
         return count
     }
 
-    override fun stop(){
+    override fun stop() {
         // none
     }
 

@@ -1,10 +1,10 @@
 package com.example.fluttercounterexample.ui.view
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.View
 import android.view.View.OnClickListener
+import androidx.appcompat.app.AppCompatActivity
 import com.example.fluttercounterexample.databinding.ActivityMainBinding
 import com.example.fluttercounterexample.ui.contract.MainActivityContract
 import com.example.fluttercounterexample.ui.presenter.MainActivityPresenter
@@ -14,6 +14,7 @@ class MainActivity : AppCompatActivity(), MainActivityContract.View {
         const val VIEW_NAME = "MainActivity"
         const val COUNT_BUNDLE_KEY = "COUNT_TEXT_VALUE"
     }
+
     private lateinit var binding: ActivityMainBinding
     private lateinit var presenter: MainActivityContract.Presenter
 
